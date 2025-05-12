@@ -1,0 +1,110 @@
+Demo.txt – Project Demonstration Guide
+  Project Title:
+Predicting Energy Consumption Patterns Using Time Series Forecasting for Smart Grids
+
+Objective of the Demo:
+To showcase the workflow, data analysis, model prediction, and web dashboard that forecasts future energy demand based on historical data.
+
+ Tools Required:
+Python 3.8+
+
+Google Colab or Jupyter Notebook
+
+Flask (for web app demo)
+
+Browser (e.g., Chrome)
+
+Model file: trained_model.pkl
+
+Dataset: smart_grid_energy_consumption.csv
+ Demo Steps:
+1. Data Analysis (Jupyter or Colab)
+Open EDA_and_Model.ipynb or Colab notebook.
+
+Run the notebook cells step-by-step:
+
+Load the dataset
+
+Perform EDA (plots: histogram, scatter plot, boxplot)
+
+Time series decomposition
+
+Model training (ARIMA or LSTM)
+
+Forecast future values
+
+Explain:
+
+How seasonality and temperature affect usage
+
+Why certain models were chosen (e.g., ARIMA for stationary data)
+
+ 2. Model Prediction
+Load the trained model (trained_model.pkl).
+
+Generate future predictions for 30 time steps.
+
+Visualize actual vs predicted values (using matplotlib or plotly).
+
+Explain:
+
+RMSE/MAE scores
+
+Forecast graph insights
+
+ 3. Web Dashboard Demo (Flask)
+Run the app:
+
+bash
+Copy
+Edit
+python source.py
+Open browser and go to:
+
+cpp
+Copy
+Edit
+http://127.0.0.1:5000
+Show:
+
+Line chart of predictions
+
+Prediction table
+
+Real-time style dashboard with forecast
+
+Explain:
+
+Flask structure
+
+How data is passed from model to web
+
+4. Dashboard (Optional – Power BI or Plotly Dash)
+If available, open interactive dashboard:
+
+Filter by time, month, substation
+
+Highlight peak periods
+
+Visual summaries
+
+ Explain:
+
+How business teams can use this data
+
+ Key Talking Points:
+What insights were derived from EDA (e.g., peak usage hours, temperature effects)?
+
+Why time series forecasting is important in smart grids?
+
+How can utilities benefit from this system (load planning, cost savings)?
+
+Future improvements: Real-time data pipeline, D3.js visualization, CRM alerts
+
+ Team Member Roles (for viva/presentation):
+Name	Responsibilities
+Selvi.E	Abstract, source code, system requirements
+Madhumitha.V	Dataset and preprocessing, EDA
+Haritha.S	Insights, Recommendations, backend logic
+Nandhini.S	Dashboards, Deliverables, Future Scope
+
