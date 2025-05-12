@@ -1,0 +1,90 @@
+Htmlcode.html
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Grid Energy Forecast</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .prediction-plot {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .prediction-plot img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .prediction-table {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Grid Energy Consumption Prediction</h1>
+
+        {% if plot_url %}
+        <div class="prediction-plot">
+            <h2>Forecasted Energy Consumption</h2>
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Energy Forecast Plot">
+        </div>
+        {% endif %}
+
+        <div class="prediction-table">
+            <h2>Predicted Values</h2>
+            {{ predictions_table|safe }}
+        </div>
+    </div>
+</body>
+</html>
+ Placement:
+Save this as:
+
+bash
+Copy
+Edit
+/templates/Htmlcode.html
+Then in source.py, make sure your Flask route renders it:
+
+python
+Copy
+Edit
+return render_template('Htmlcode.html', predictions_table=table_html, plot_url=plot_url)
