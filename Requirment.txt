@@ -1,0 +1,31 @@
+requirements.txt
+ini
+Copy
+Edit
+Flask==2.3.2
+pandas==2.1.0
+numpy==1.25.2
+matplotlib==3.7.2
+seaborn==0.12.2
+scikit-learn==1.3.0
+statsmodels==0.14.0
+plotly==5.15.0
+openpyxl==3.1.2
+pandas-profiling==3.6.6
+prophet==1.1.5  # Optional, only if using Facebook Prophet
+gunicorn==21.2.0  # Required for Heroku or production deployment
+ Notes:
+gunicorn is included for deploying to platforms like Heroku.
+
+prophet requires pystan under the hood. If you get errors, install Prophet via:
+
+bash
+Copy
+Edit
+pip install prophet --no-binary :all:
+If using LSTM or deep learning models, consider adding:
+
+ini
+Copy
+Edit
+tensorflow==2.13.0
