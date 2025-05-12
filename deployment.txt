@@ -1,0 +1,109 @@
+ Step 1: Set Up Environment Locally
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/selvi2106/Phase3.git
+cd Phase3
+Create virtual environment (recommended):
+
+bash
+Copy
+Edit
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate     # Windows
+Install dependencies:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Ensure model is in place:
+
+File: model/trained_model.pkl
+
+This should be a pickled time series forecasting model (e.g., SARIMA, Prophet, etc.)
+
+ Step 2: Run Locally
+Run the Flask app:
+
+bash
+Copy
+Edit
+python source.py
+Open in your browser:
+
+cpp
+Copy
+Edit
+http://127.0.0.1:5000
+ Step 3: Deploy to Heroku (Optional)
+Install the Heroku CLI:
+https://devcenter.heroku.com/articles/heroku-cli
+
+Log in to Heroku:
+
+bash
+Copy
+Edit
+heroku login
+Create the Heroku app:
+
+bash
+Copy
+Edit
+heroku create smartgrid-forecast
+Ensure the following files are present:
+
+Procfile
+
+requirements.txt
+
+runtime.txt (optional, e.g., python-3.9.13)
+
+source.py
+
+Create a Procfile with this content:
+
+makefile
+Copy
+Edit
+web: python source.py
+Initialize Git (if not already initialized):
+
+bash
+Copy
+Edit
+git init
+git add .
+git commit -m "Initial commit for Heroku deployment"
+Deploy to Heroku:
+
+bash
+Copy
+Edit
+git push heroku main  # or 'master' if using older Git versions
+View the live app:
+
+bash
+Copy
+Edit
+heroku open
+Project Structure (Recommended)
+cpp
+Copy
+Edit
+Phase3/
+├── model/
+│   └── trained_model.pkl
+├── templates/
+│   └── index.html
+├── static/
+│   └── style.css
+├── source.py
+├── requirements.txt
+├── Procfile
+├── runtime.txt (optional)
+└── deployment.txt
